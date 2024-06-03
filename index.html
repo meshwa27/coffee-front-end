@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.js">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css"
+        integrity="sha512-OQDNdI5rpnZ0BRhhJc+btbbtnxaj+LdQFeh0V9/igiEPDiWE2fG+ZsXl0JEH+bjXKPJ3zcXqNyP4/F/NegVdZg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"
+        integrity="sha512-Ysw1DcK1P+uYLqprEAzNQJP+J4hTx4t/3X2nbVwszao8wD+9afLjBQYjz7Uk4ADP+Er++mJoScI42ueGtQOzEA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <style>
+.navbar-nav {
+            gap: 30px;
+        }
+
+        @media (max-width: 992px) {
+            .navbar-nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            .nav-link {
+                margin-left: 0 !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar-nav {
+                display: none;
+            }
+            .btn-toggler {
+                display: block !important;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .logo img {
+                width: 100px;
+            }
+            .navbar-nav {
+                display: none;
+            }
+            .btn-toggler {
+                display: block !important;
+            }
+        }
+
+        </style>
+</head>
+
+<body style="background-color: black;">
+
+    <div class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid d-flex align-items-center">
+            <button class="btn btn-toggler d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#slidebar">
+                <span><i class="bi bi-list d-lg-none text-white"></i></span>
+            </button>
+
+            <ul class="navbar-nav d-xs-none d-flex d-sm-none d-md-none d-lg-flex">
+                <li class="nav-item"><a href="product.html" class="nav-link">COFFEE</a></li>
+                <li class="nav-item"><a href="subscribe.html" class="nav-link" style="margin-left:75px;">SUBSCRIBE & SAVE</a></li>
+                <li class="nav-item"><a href="mearch.html" class="nav-link" style="margin-left: 90px;">MERCH</a></li>
+                <li class="nav-item"><a href="" class="nav-link" style="margin-left: 200px;">FIND IN STORE</a></li>
+                <li class="nav-item"><a href="" class="nav-link" style="margin-left: 100px;">BLOG</a></li>
+                <li class="nav-item"><a href="" class="nav-link" style="margin-left: 100px;">ABOUT</a></li>
+            </ul>
+
+            <div class="logo ms-auto">
+                <a href="#"><img src="images/dwc-logo.png" alt="Logo"></a>
+            </div>
+
+            <ul class="navbar-nav d-xs-none d-flex d-sm-none d-md-none d-lg-flex ms-auto">
+                <li class="list-unstyled p-1 ms-2"><a href="login.html"><i class="bi bi-person-fill"></i></a></li>
+                <li class="list-unstyled p-1 ms-2">
+                    <a href="#" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">
+                        <i class="bi bi-search">
+                            <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+                                <div class="offcanvas-header" style="background-color:black;height: 30px;"></div>
+                                <div class="offcanvas-body" style="background-color: black;">
+                                    <input type="text" placeholder="search" style="background-color: #ffffff; width: 40%; height: 60px">
+                                    <i class="ri-search-fill" style="color: white;"></i>
+                                </div>
+                            </div>
+                        </i>
+                    </a>
+                </li>
+                <li class="list-unstyled p-1 ms-2"><a href="cart.html" id="Addtocart"><i class="bi bi-cart3"></i></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="slidebar" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h5 id="offcanvasRightLabel" class="ms-5">Menu</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body" style="background-color: black;">
+            <ul>
+                <li class="nav-item list-unstyled"><a href="" class="nav-link text-white">COFFEE</a></li><hr>
+                <li class="nav-item list-unstyled"><a href="" class="nav-link  text-white">SUBSCRIBE & SAVE</a></li><hr>
+                <li class="nav-item list-unstyled"><a href="" class="nav-link  text-white">MERCH</a></li><hr>
+                <li class="nav-item list-unstyled"><a href="" class="nav-link  text-white">FIND IN STORE</a></li><hr>
+                <li class="nav-item list-unstyled"><a href="" class="nav-link  text-white">BLOG</a></li><hr>
+                <li class="nav-item list-unstyled"><a href="" class="nav-link  text-white">ABOUT</a></li><hr>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="list-unstyled "><a href="#"><i class="ri-user-fill"></i></a></li>
+                <li class="list-unstyled "><a href="#"><i class="ri-search-fill"></i></a></li>
+                <li class="list-unstyled "><a href="#"><i class="ri-shopping-cart-2-fill"></i></a></li>
+            </ul>
+
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="10000">
+                    <img src="images/AlmondAfterlife_Homepage_2_f324381c-9165-4448-8b6b-37800d01fa86.jpg"
+                        class="img-fluid d-block w-100" alt="...">
+                    <div class="banner-content1">
+                        <h1>NEW FLAVOR: <br>ALMOND AFTERLIFE</h1>
+                        <p>Boasting notes of roasted almonds and sweet, fresh biscotti, dig yourself <br> out of your
+                            tomb
+                            of a to-do list with a medium roast could wake the <br> dead. Available exclusively at
+                            deathwishcoffee.com.</p>
+                        <a href="https://deathwishcoffee.com/shop/almond-afterlife"class="button1" style="padding: 10px 20px;">SHOP
+                            ALMOND AFTERLIFE</a>
+                        <a href="https://deathwishcoffee.com/shop/all-coffee"class="button2" style="padding: 10px 20px;">SHOP ALL
+                            COFFEE</a>
+                    </div>
+                </div>
+
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="images/Artist_Series_2_Homepage_Banner_Desktop_A1.jpg" class=" img-fluid d-block w-100"
+                        alt="...">
+                    <div class="banner-content2">
+                        <h1>NUMB YOUR MIND TO <br> THE DAILY GRIND</h1>
+                        <p>From the wild and hallucinogenic mind of artist Cat Dirty, our latest <br>limited-edition
+                            collaboration draws inspiration from skate culture <br>, psychedelics and classic cartoons.
+                        </p>
+                        <a href="https://deathwishcoffee.com/shop/artist-series" class="button1">SHOP NOW</a>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="images/AlmondAfterlife_Homepage_2_f324381c-9165-4448-8b6b-37800d01fa86.jpg"
+                        class="img-fluid d-block w-100" alt="...">
+                    <div class="banner-content3">
+                        <h1>SWING HARD AND <br>SWIG HARDER</h1>
+                        <p>Rep your team with a raglan ready to show no mercy in the Swig <br> League showdown between
+                            Pitch
+                            Black and the Creamators.</p>
+                        <a href="https://deathwishcoffee.com/shop/swig-league" class="button1">SHOP NOW</a>
+                        <a href="https://deathwishcoffee.com/swig-league-scoreboard" class="button2" >SWING LEAGUE SCOREBOARD</a>
+                    </div>
+                </div>
+
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="container-fluid" style="background-color: black;">
+        <div class="row">
+            <div class="arrivals">
+                <h2>NEW ARRIVALS</h2>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="img1">
+                        <img src="images/DWC_April_ArtistSeries_LongSleeve_Front_Web.jpg" />
+                    </div>
+                    <div class="img-content">
+                        <h6 style="text-align: left;"><a href="">DAILY GRIND LONG SLEEVE</a></h6>
+                        <p>$45.00</p>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <span style="color: #ffffff;">0.0(0)</span><br>
+                        <a href="" class="btn">ADD TO CART<i class="ri-shopping-cart-2-fill"></i></a>
+                    </div>
+
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="img2">
+                        <img src="images/1.jpg" />
+                    </div>
+                    <div class="img-content" style="text-align: left ;">
+                        <h><a href="">SACRED BLOOM TOWEL AND <br>OVEN MITT</a></h6>
+                            <p>$28.00</p>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <span style="color: #ffffff;">0.0(0)</span><br>
+                            <a href="" class="btn">ADD TO CART<i class="ri-shopping-cart-2-fill"></i></a>
+
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="img3">
+                        <img src="images/DWC_April_RaglanCreamators_Front_Web.jpg" />
+                    </div>
+                    <div class="img-content" style="text-align: left;">
+                        <h6><a href="">CREAMATORS RAGLAN</a></h6>
+                        <p>$35.00</p>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <span style="color: #ffffff;">0.0(0)</span><br>
+                        <a href="" class="btn">ADD TO CART<i class="ri-shopping-cart-2-fill"></i></a>
+
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="img4">
+                        <img src="images/DWC_April_Skateboard_black_Bottom_Web.jpg" />
+                    </div>
+                    <div class="img-content" style="text-align: left;">
+                        <h6><a href="">DAILY GRINDBLACK <br> SKATEBOARD DECK</a></h6>
+                        <p>$70.00</p>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <span style="color: #ffffff;">0.0(0)</span><br>
+                        <a href="" class="btn">ADD TO CART<i class="ri-shopping-cart-2-fill"></i></a>
+
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="img5">
+                        <img src="images/Tree-of-life-mug-Death-Wish-Coffee.jpg" />
+                    </div>
+                    <div class="img-content" style="text-align: left;">
+                        <h6><a href="">Tree of life mug</a></h6>
+                        <p>$38.00</p>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <span style="color: #ffffff;">0.0(0)</span><br>
+                        <a href="" class="btn">ADD TO CART<i class="ri-shopping-cart-2-fill"></i></a>
+
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="img6">
+                        <img src="images/DWC_April_RaglanPB_Front_Web.jpg" />
+                    </div>
+                    <div class="img-content" style="text-align: left;">
+                        <h6><a href="">PITCH BLACK RAGLAN</a></h6>
+                        <p>$35.00</p>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <span style="color: #ffffff;">0.0(0)</span><br>
+                        <a href="" class="btn">ADD TO CART<i class="ri-shopping-cart-2-fill"></i></a>
+
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="img7">
+                        <img src="images/DWC_April_SwedishRags_Front_Web.jpg" />
+                    </div>
+                    <div class="img-content" style="text-align: left;">
+                        <h6><a href="">SACRED BLOOM SWEDISH RAG SET</a></h6>
+                        <p>$12.00</p>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <span style="color: #ffffff;">0.0(0)</span><br>
+                        <a href="" class="btn">ADD TO CART<i class="ri-shopping-cart-2-fill"></i></a>
+
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="img8">
+                        <img src="images/DWC_April_Straws_Package_Front_Web.jpg" />
+                    </div>
+                    <div class="img-content" style="text-align: left;">
+                        <h6><a href="">KLEAN KANTEEN STRAW 2-PACK</a></h6>
+                        <p>$8.00</p>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <span style="color: #ffffff;">0.0(0)</span><br>
+                        <a href="" class="btn">ADD TO CART<i class="ri-shopping-cart-2-fill"></i></a>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="banner">
+            </div>
+            <div class="content1">
+                <h5>THE SOCIETY OF STRONG COFFEE</h5>
+                <h1>SAVE 30% OFF YOUR <br> FIRST SHIPMENT</h1>
+                <p>Like a secret handshake, your status in the Society of Strong Coffee also <br>earns you exclusive
+                    access to subscriber-only merch, events, forums, and <br> so much more. Start a subscription today
+                    to start reaping the benefits.
+                    START A COFFEE SUBSCRIPTION</p>
+                <a href="https://deathwishcoffee.com/shop/almond-afterlife">START A COFFEE SUBSCRIBE</a>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="sellers">
+                <h2>BEST SELLERS</h2>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="img1">
+                        <img src="images/Dark_Roast_16oz_Ground_Angle_A1-_3.jpg" />
+                    </div>
+                    <div class="img-content">
+                        <h6 style="text-align: left;"><a href="">DARK ROST COFFEE</a></h6>
+                        <p>$19.99</p>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <span style="color: #ffffff;">4.8(4345)</span><br>
+                        <a href="" class="btn d-inline">QUICK SHOP<i class="ri-shopping-cart-2-fill"></i></a>
+                    </div>
+
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="img2">
+                        <img
+                            src="images/Dark_Roast_10ct_Angle_Vertical_Pods_A1-_2_80a7a931-d037-40d3-a7aa-0a05df7f2e6f.jpg" />
+                    </div>
+                    <div class="img-content">
+                        <h6><a href="">DARK ROAST SINGLE-SERVE PODS</a></h6>
+                        <p>$14.99</p>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <span style="color: #ffffff;">4.8(2920)</span><br>
+                        <a href="" class="btn d-inline ">QUICH SHOPE<i class="ri-shopping-cart-2-fill"></i></a>
+
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="img3">
+                        <img
+                            src="images/Chocolate_Hazelnut_14oz_Ground_Angle_A1_963d87a8-ec42-42fb-8b8d-8e21d32ff6d2.jpg" />
+                    </div>
+                    <div class="img-content" style="text-align: left;">
+                        <h6><a href="">CHOCOLATE HAZELNUT COFFEE</a></h6>
+                        <p>$19.99</p>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <span style="color: #ffffff;">4.7(179)</span><br>
+                        <a href="" class="btn d-inline">QUICH SHOPE<i class="ri-shopping-cart-2-fill"></i></a>
+
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="img4">
+                        <img
+                            src="images/Chocolate_Hazelnut_10ct_Angle_Vertical_Pods_A1_097b3690-6705-45ca-afa8-1b3ffa652157.jpg" />
+                    </div>
+                    <div class="img-content" style="text-align: left;">
+                        <h6><a href="">CHOCOLATE HAZELNUT SINGLE-SERVE PODS</a></h6>
+                        <p>$15.99</p>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <span style="color: #ffffff;">4.5(139)</span><br>
+                        <a href="" class="btn d-inline">ADD TO CART<i class="ri-shopping-cart-2-fill"></i></a>
+
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="img5">
+                        <img src="images/DeathWishCoffee_SocietyOfStrong_Mug_Front_057_Web-_1.jpg" />
+                    </div>
+                    <div class="img-content" style="text-align: left;">
+                        <h6><a href="">SOCIETY OF STORNG MUG</a></h6>
+                        <p>$38.00</p>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <span style="color: #ffffff;">5.0(34)</span><br>
+                        <a href="" class="btn d-inline">QUICK SHOPE<i class="ri-shopping-cart-2-fill"></i></a>
+
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="img6">
+                        <img
+                            src="images/DeathWishCoffee_SocietyOfStrong_Jacket_Front_045_Web_712b1fec-946f-428c-b35c-475e7c627c18.jpg" />
+                    </div>
+                    <div class="img-content" style="text-align: left;">
+                        <h6><a href="">SACRED TRUTH WORK JACKET</a></h6>
+                        <p>$125.00</p>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <span style="color: #ffffff;">4.7(13)</span><br>
+                        <a href="" class="btn d-inline">ADD TO CART<i class="ri-shopping-cart-2-fill"></i></a>
+
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="img7">
+                        <img
+                            src="images/Medium_Roast_10ct_Angle_Vertical_Pods_A1_97237db9-e69a-418f-b5da-ac7e01acb8ec.jpg" />
+                    </div>
+                    <div class="img-content" style="text-align: left;">
+                        <h6><a href="">MEDIUM ROAST COFFEE</a></h6>
+                        <p>$19.99</p>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <span style="color: #ffffff;">4.8(1006)</span><br>
+                        <a href="" class="btn d-inline">QUICK SHOPE<i class="ri-shopping-cart-2-fill"></i></a>
+
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="img8">
+                        <img src="images/Medium_Roast_16oz_Ground_Angle_A1_8f8a7b97-f418-4bc8-bfcd-bd551950b3b3.jpg" />
+                    </div>
+                    <div class="img-content" style="text-align: left;">
+                        <h6><a href="">MEDIUM ROAST SINGLE-SERVE PODS</a></h6>
+                        <p>$14.99</p>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <span style="color: #ffffff;">4.8(504)</span><br>
+                        <a href="" class="btn d-inline">QUICK SHOPE<i class="ri-shopping-cart-2-fill"></i></a>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="img9">
+                        <img src="images/MetalCore-101.jpg" />
+                    </div>
+                    <div class="img-content" style="text-align: left;">
+                        <h6><a href="">CROSSBONES KLEAN KANTEEN MUG</a></h6>
+                        <p>$25.00</p>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <span style="color: #ffffff;">4.8(61)</span><br>
+                        <a href="" class="btn d-inline">ADD TO CART<i class="ri-shopping-cart-2-fill"></i></a>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="img10">
+                        <img src="images/DeathWishCoffee_February24_Snapback_Web.jpg" />
+                    </div>
+                    <div class="img-content" style="text-align: left;">
+                        <h6><a href="">ANTHONY ALFREDO NO.62 SNAPBACK</a></h6>
+                        <p>$35.00</p>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <span style="color: #ffffff;">5.0(2)</span><br>
+                        <a href="" class="btn d-inline">ADD TO CART<i class="ri-shopping-cart-2-fill"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+    <div class="wrapper mt-5">
+        <div class="container-fluid d-lg-flex" style="margin:0px 180px ;">
+            <div class="col-md-3 ">
+                <div class="zoom-effect-container">
+                    <div class="image-card mt-sm-5">
+                        <img src="images/Chocolate_Hazelnut_Coffee.jpg" />
+                    </div>
+                    <div class="card-con">
+                        <h3><a href="">COFFEE</a></h3>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-3 me-sm-2">
+                <div class="zoom-effect-container">
+                    <div class="image-card mt-sm-5">
+                        <img src="images/Shadow_Travel_Mug_4.jpg" />
+                    </div>
+                    <div class="card-con">
+                        <h3><a href="">MERCH</a></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="zoom-effect-container">
+                    <div class="image-card mt-sm-5">
+                        <img src="images/Fortune_Teller_Bundle.jpg" />
+                    </div>
+                    <div class="card-con">
+                        <h3><a href="">BUNDLES</a></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+
+    <div class="text-slider">
+        <div class="container-fluid">
+            <div class="col-12">
+                <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active text-center">
+                            <h1>“I AM SO HAPPY I STARTED DRINKING <br>THIS COFFEE”</h1>
+                            <p>I am so happy I started drinking this coffee. This is the first time I have not had to
+                                deal <br> with acid issues or coffee making me feel sick after drinking it. I have not
+                                had that <br> issue once with this coffee and that's a big deal to me.MICHELLE R.</p>
+                        </div>
+                        <div class="carousel-item text-center">
+                            <h1>“CONSIDER IT A FINISHED PROJECT"</h1>
+                            <p>If you need to get things DONE, drink some Death Wish Coffee and consider it a <br>
+                                finished project. Ordering more as we speak! <br> MASSI B.
+
+                                MASSI B.</p>
+                        </div>
+                        <div class="carousel-item text-center">
+                            <h1>
+                                “THE GREATEST COFFEE ON EARTH”</h1>
+                            <p>Death Wish Coffee is the greatest coffee on earth. I wholeheartedly believe that. It's
+                                <br> smoother than you can possibly imagine. It's strong, it's whole and it's hearty. I
+                                can't <br> endorse this product enough.
+                                TROY S.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="following">
+                    <h5>JOIN THE FOLLOWING</h5>
+                    <p><a href="">@DEATHWISHCOFFEE</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+                <div class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12 text">
+                                <p> LET'S DRINK COFFEE AND THROW THINGS AT HAPPY PEOPLE </p>
+                                <input type="email" placeholder="Enter Your Email Address" required><button><a
+                                        href="">SIGN ME UP</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <footer class="text-white pt-5 pb-4">
+                    <div class="container text-center text-md-left">
+                        <div class="row text-center text-md-left">
+                            <div class=" grid col-md-3 col-lg-3 mx-auto mt-3">
+                                <img src="images/dwc-logo.png" alt="">
+                            </div>
+                            <div class="col-md-2 col-lg-2 mx-auto mt-3">
+                                <h5 class="text-uppercase mb-4 font-weight-bold">company</h5>
+                                <p><a href="">Help+FAQ</a></p>
+                                <p><a href="">Refund Policy</a></p>
+                                <p><a href="">Careers</a></p>
+                                <p><a href="">Wholesale</a></p>
+                            </div>
+                            <div class="col-md-4 col-lg-3 mx-auto mt-3">
+                                <h5 class="text-uppercase mb-4 font-weight-bold">ACCOUNTS + ORDERS </h5>
+                                <p><a href="">Your Account</a></p>
+                                <p><a href="">Shipping + Delivery</a></p>
+                                <p><a href="">Subscription</a></p>
+                                <p><a href="">Track Your Order</a></p>
+                            </div>
+                            <div class="col-md-3 col-lg-2 mx-auto mt-3">
+                                <h5 class="text-uppercase mb-4 font-weight-bold">LEGAL</h5>
+                                <p><a href="">Tearms+condition</a></p>
+                                <p><a href="">Privacy Policy</a></p>
+                                <p><a href="">PROP 65</a></p>
+                            </div>
+                            <div class="icon-box">
+                                <p>GET WIRED WITH US</p>
+                                <ul class="d-flex justify-content-center foot-icons" >
+                                    <li class="list-unstyled ms-2" style="padding: 10px 15px;background-color: red;border-radius: 50%;"><a href=""><i class="ri-facebook-fill"></i></a></li>
+                                    <li class="list-unstyled ms-2" style="padding: 10px 15px;background-color: red;border-radius: 50%;"><a href=""><i class="ri-instagram-line"></i></a></li>
+                                    <li class="list-unstyled ms-2" style="padding: 10px 15px;background-color: red;border-radius: 50%;"><a href=""><i class="ri-youtube-fill"></i></a></li>
+                                    <li class="list-unstyled ms-2" style="padding: 10px 15px;background-color: red;border-radius: 50%;"><a href=""><i class="ri-twitter-fill"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+        </footer>
+  <script src="style.js"></script>
+</body>
+
+</html>

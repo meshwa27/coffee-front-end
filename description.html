@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="main.js">
+        <script src="https://code.jquery.com/jquery-3.7.1.js"
+            integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css"
+            integrity="sha512-OQDNdI5rpnZ0BRhhJc+btbbtnxaj+LdQFeh0V9/igiEPDiWE2fG+ZsXl0JEH+bjXKPJ3zcXqNyP4/F/NegVdZg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="description.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"
+            integrity="sha512-Ysw1DcK1P+uYLqprEAzNQJP+J4hTx4t/3X2nbVwszao8wD+9afLjBQYjz7Uk4ADP+Er++mJoScI42ueGtQOzEA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </head>
+<body style="background-color: black;">
+   <div class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid d-flex align-item-center ">
+            <button class="btn btn-toggler d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#slidebar"><span><i
+                class="bi bi-list d-lg-none text-white"></i></span></button>
+
+    <ul class="navbar-nav d-xs-none  d-flex d-sm-none d-md-none d-lg-flex">
+        <li class="nav-item"><a href="" class="nav-link" style="margin-left: 0px;">COFFEE</a></li>
+        <li class="nav-item"><a href="" class="nav-link" style="margin-left:75px;">SUBSCRIBE & SAVE</a></li>
+        <li class="nav-item"><a href="" class="nav-link" style="margin-left: 90px;">MERCH</a></li>
+        <li class="nav-item"><a href="" class="nav-link" style="margin-left: 200px;">FIND IN STORE</a></li>
+        <li class="nav-item"><a href="" class="nav-link" style="margin-left: 100px;">BLOG</a></li>
+        <li class="nav-item"><a href="" class="nav-link" style="margin-left: 100px;">ABOUT</a></li>
+    </ul>
+    <div class="logo">
+        <a href="#"><img src="images/dwc-logo.png" alt=""></a>
+    </div>
+            <ul class="navbar-nav d-xs-none  d-flex d-sm-none d-md-none d-lg-flex">
+                <li class="list-unstyled p-1 ms-2"><a href="login.html"><i class="bi bi-person-fill"></i></a></li>
+                <li class="list-unstyled p-1 ms-2"><a href="#" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"><i class="bi bi-search">
+                            <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop"
+                                aria-labelledby="offcanvasTopLabel">
+                                <div class="offcanvas-header" style="background-color:black;height: 30px;">
+                                </div>
+                                <div class="offcanvas-body" style="background-color: black;">
+                                    <input type="text" placeholder="search" style="background-color: #ffffff; width: 40%; height: 60px">
+                                    <i class="ri-search-fill" style="color: white;"></i> </div>
+                            </div>
+                        </i></a></li>
+                        <li class="list-unstyled p-1 ms-2"><a href="cart.html" id="Addtocart"><i class="bi bi-cart3">    
+                            </i></a></li>
+            </ul>
+        </div>
+    </div>
+   
+
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="slidebar" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h5 id="offcanvasRightLabel" class="ms-5">Menu</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body" style="background-color: black;">
+            <ul>
+                <li class="nav-item list-unstyled"><a href="" class="nav-link text-white">COFFEE</a></li><hr>
+                <li class="nav-item list-unstyled"><a href="" class="nav-link  text-white">SUBSCRIBE & SAVE</a></li><hr>
+                <li class="nav-item list-unstyled"><a href="" class="nav-link  text-white">MERCH</a></li><hr>
+                <li class="nav-item list-unstyled"><a href="" class="nav-link  text-white">FIND IN STORE</a></li><hr>
+                <li class="nav-item list-unstyled"><a href="" class="nav-link  text-white">BLOG</a></li><hr>
+                <li class="nav-item list-unstyled"><a href="" class="nav-link  text-white">ABOUT</a></li><hr>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="list-unstyled "><a href="#"><i class="ri-user-fill"></i></a></li>
+                <li class="list-unstyled "><a href="#"><i class="ri-search-fill"></i></a></li>
+                <li class="list-unstyled "><a href="#"><i class="ri-shopping-cart-2-fill"></i></a></li>
+            </ul>
+
+        </div>
+    </div>
+
+    <div class="container" style="margin-top: 150px;">
+        <a href="index.html" class="Homepage text-decoration-none text-white" style="text-align: left;display: inline;">Homepage > </a><span class="text-white">coffe</span>
+        <div class="row mt-5 mb-5" id="product-Data">
+            <div class="col-md-7 col-lg-7 me-5">
+                <img src="" alt="" height="720px" id="image">
+            </div>
+            <div class="col-md-5 col-lg-5 product-info">
+                <h1 id="title" class="m-0"></h1>
+                <span id="star" class="me-2"></span><span id="rating"></span>
+                <p id="price"></p>
+                <p id="description"></p>
+                <button id="addtocart">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer mt-5">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 text">
+                    <p> LET'S DRINK COFFEE AND THROW THINGS AT HAPPY PEOPLE </p>
+                    <input type="email" placeholder="Enter Your Email Address" required><button><a
+                            href="">SIGN ME UP</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="text-white pt-5 pb-4">
+        <div class="container text-center text-md-left">
+            <div class="row text-center text-md-left">
+                <div class=" grid col-md-3 col-lg-3 mx-auto mt-3">
+                    <img src="images/dwc-logo.png" alt="">
+                </div>
+                <div class="col-md-2 col-lg-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold">company</h5>
+                    <p><a href="">Help+FAQ</a></p>
+                    <p><a href="">Refund Policy</a></p>
+                    <p><a href="">Careers</a></p>
+                    <p><a href="">Wholesale</a></p>
+                </div>
+                <div class="col-md-4 col-lg-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold">ACCOUNTS + ORDERS </h5>
+                    <p><a href="">Your Account</a></p>
+                    <p><a href="">Shipping + Delivery</a></p>
+                    <p><a href="">Subscription</a></p>
+                    <p><a href="">Track Your Order</a></p>
+                </div>
+                <div class="col-md-3 col-lg-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold">LEGAL</h5>
+                    <p><a href="">Tearms+condition</a></p>
+                    <p><a href="">Privacy Policy</a></p>
+                    <p><a href="">PROP 65</a></p>
+                </div>
+                <div class="icon-box">
+                    <p>GET WIRED WITH US</p>
+                    <ul class="d-flex justify-content-center foot-icons" >
+                        <li class="list-unstyled ms-2" style="padding: 10px 15px;background-color: red;border-radius: 50%;"><a href=""><i class="ri-facebook-fill"></i></a></li>
+                        <li class="list-unstyled ms-2" style="padding: 10px 15px;background-color: red;border-radius: 50%;"><a href=""><i class="ri-instagram-line"></i></a></li>
+                        <li class="list-unstyled ms-2" style="padding: 10px 15px;background-color: red;border-radius: 50%;"><a href=""><i class="ri-youtube-fill"></i></a></li>
+                        <li class="list-unstyled ms-2" style="padding: 10px 15px;background-color: red;border-radius: 50%;"><a href=""><i class="ri-twitter-fill"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+    </footer>
+    <script src="product.js"></script>
+</body>
+</html>
+<script>
+    const a=new URLSearchParams(window.location.search)
+    window.addEventListener("load",()=>{
+    
+    
+
+    document.getElementById("image").src=a.get("image")
+    document.getElementById("title").innerText=a.get("title")
+    document.getElementById("price").innerText=a.get("price")
+    document.getElementById("star").innerText=a.get("star")
+    document.getElementById("rating").innerText=a.get("rating")
+    document.getElementById("description").innerText=a.get("description")
+    })
+
+    addtocart.addEventListener("click",()=>
+{
+    let carddata={
+        image_url:a.get("image"),
+        name:a.get("title"),
+        regular_price:a.get("price"),
+        rating:a.get("rating"),
+        star:a.get("star")
+
+    }
+   fetch("https://coffee-back-end.onrender.com/cart",{
+    method:"POST",
+    headers:{
+        "Content-Type":"application/json"
+    },
+    body:JSON.stringify(carddata)
+   }).then((res)=>res.json())
+   .then((data)=>alert("data added to cart"))
+   .catch((err)=>console.log(err))
+})
+    
+</script>

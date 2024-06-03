@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        #allProducts {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .product-card {
+           
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        .product-card img {
+            max-width: 50%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        .product-card p {
+            margin: 10px 0;
+            color: #333;
+        }
+        .product-card .btn {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .product-card .btn:hover {
+            background-color: #0056b3;
+        }
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+            color: #333;
+        }
+    </style>
+
+</head>
+<body>
+    
+        <h1>this is cart page</h1>
+        <div id="allProducts"></div>
+   
+    
+</body>
+</html>
+<script>
+    function fetchdata() {
+    fetch("https://coffee-back-end.onrender.com/cart")
+        .then((res) => res.json())
+        .then((data) =>cardlist(data))
+        .catch((err) => console.log(err));
+}
+
+fetchdata();
+
+function cardlist(data)
+{
+    const store = data.map((el) => product(el.name, el.image_url, el.regular_price, el.star, el.rating,el.id,el.description));
+    document.getElementById("allProducts").innerHTML = store.join("");
+}
+function product(name, image_url, regular_price, id, star, rating, description){
+    let singlecard = `
+    <a href="description.html?title=${encodeURIComponent(name)}&price=${encodeURIComponent(regular_price)}&image=${encodeURIComponent(image_url)}&description=${encodeURIComponent(description)}&star=${encodeURIComponent(star)}&rating=${encodeURIComponent(rating)}&id=${encodeURIComponent(id)}">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+            <div class="product-card">
+                <div id="image" class="mb-2">
+                        <img src="${image_url}" alt="" class="img-fluid" data-id="${id}">
+                </div>
+                <p id="name" class="m-0">
+                        ${name}
+                </p>
+                <p id="regular-price" class="m-0">$${regular_price}</p>
+                <p id="rating" class="m-0 text-white">
+                    <span id="star" class="fs-5">${star}</span> ${rating}
+                </p>
+              
+                <button data-id="${id}" id="addtocart" class="addCoffeeDataButton btn btn-primary mt-2">Add to Cart <i class="ri-shopping-cart-2-line" id="cartIcon"></i></button>
+            </div>
+        </div>
+        <a/>
+    `;
+    return singlecard;
+}
+
+</script>
+

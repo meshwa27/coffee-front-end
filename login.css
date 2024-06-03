@@ -1,0 +1,136 @@
+.navbar{
+  width: 100%;
+  height: 100px;
+  background-color: black;
+ z-index: 10;
+
+ 
+}
+.navbar-nav {
+  margin: auto;
+  padding: 20px;
+}
+.navbar-nav .nav-link
+{
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    
+}
+.nav-item .nav-link:hover
+{
+
+    color: red;
+}
+.navbar-nav .nav-link::after
+{
+    content: '';
+    background-color: red;
+    display: block;
+    width: 0%;
+    margin: auto;
+    height: 2px;
+    transition: all 0.5s;
+}
+.navbar-nav .nav-link:hover::after
+{
+    width: 100%;
+}
+li a i{
+  color: white;
+ font-size: 22px;
+}
+.logo{
+  z-index: 1000;
+  position: absolute;
+  left: 41%;
+ top: 30px;
+  
+  
+}
+
+.footer
+{
+  height: 150px;
+  background-color: #e12727;
+}
+.text
+{
+  text-align: center;
+}
+.text p
+{
+  margin-top: 50px;
+  font-weight: 800;
+  color: black;
+}
+.text input
+{
+  height: 35px;
+  outline: none;
+}
+.text a{
+ padding: 9px 20px;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: black;
+  border: 1px black;
+}
+footer
+{
+  height: 300px;
+   background-color: black;
+}
+footer a
+{
+  text-decoration: none;
+  color: #ffffff;
+}
+footer a:hover
+{
+  
+  color: red;
+  text-decoration:1px solid red underline;
+}
+#login-form{
+  height: 330px;
+  width: 400px;
+  margin: 200px auto 100px auto;
+}
+#login-form h1{
+  font-family: 'DM Sans';
+  font-weight: 700;
+  color: white;
+}
+#login-form input{
+  width: 100%;
+  margin: 9px 0px;
+  padding: 10px 16px;
+  outline: none;
+}
+#login-form .para{
+  font-weight: 600;
+  color: #ddd;
+  cursor: pointer;
+  &:hover{
+      color: white;
+  }
+}
+#login-form button{
+  background-color: #e12727;
+  color: white;
+  border: none;
+  padding: 7px 40px 10px;
+  margin-top: 15px;
+}
+#login-form h5{
+  font-size: 16px;
+  margin-top: 8px;
+  & a{
+      color: #ddd;
+      letter-spacing: 1px;
+      &:hover{
+          color: white;
+      }
+  }
+}

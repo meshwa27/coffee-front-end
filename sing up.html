@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- bootstarp icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Slick Carousel CSS and JavaScript files -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+    <!-- Include jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="sign up.css">
+</head>
+<body style="background-color: black;">
+    <div class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid d-flex align-item-center">
+            <button class="btn btn-toggler d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#slidebar"><span><i class="bi bi-list d-lg-none text-white"></i></span></button>
+
+            <ul class="navbar-nav d-xs-none  d-flex d-sm-none d-md-none d-lg-flex">
+                <li class="nav-item"><a href="product.html" class="nav-link" style="margin-left: 0px;">COFFEE</a></li>
+                <li class="nav-item"><a href="subscribe.html" class="nav-link" style="margin-left:75px;">SUBSCRIBE & SAVE</a></li>
+                <li class="nav-item"><a href="mearch.html" class="nav-link" style="margin-left: 90px;">MERCH</a></li>
+                <li class="nav-item"><a href="" class="nav-link" style="margin-left: 250px;">FIND IN STORE</a></li>
+                <li class="nav-item"><a href="" class="nav-link" style="margin-left: 100px;">BLOG</a></li>
+                <li class="nav-item"><a href="" class="nav-link" style="margin-left: 100px;">ABOUT</a></li>
+            </ul>
+            <div class="logo">
+                <a href="#"><img src="images/dwc-logo.png" alt=""></a>
+            </div>
+            <ul class="navbar-nav d-xs-none  d-flex d-sm-none d-md-none d-lg-flex">
+                <li class="list-unstyled p-1 ms-2"><a href="login.html"><i class="bi bi-person-fill"></i></a></li>
+                <li class="list-unstyled p-1 ms-2"><a href="#" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"><i class="bi bi-search">
+                            <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop"
+                                aria-labelledby="offcanvasTopLabel">
+                                <div class="offcanvas-header" style="background-color:black;height: 30px;">
+                                </div>
+                                <div class="offcanvas-body" style="background-color: black;">
+                                    <input type="text" placeholder="search" style="background-color: #ffffff; width: 40%; height: 60px">
+                                    <i class="ri-search-fill" style="color: white;"></i> </div>
+                            </div>
+                        </i></a></li>
+                        <li class="list-unstyled p-1 ms-2"><a href="cart.html" id="Addtocart" 
+                            ><i class="bi bi-cart3">
+                                   
+                               
+                            </i></a></li>
+            </ul>
+        </div>
+    </div>
+   
+
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="slidebar" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h5 id="offcanvasRightLabel" class="ms-5">Menu</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body" style="background-color: black;">
+            <ul>
+                <li class="nav-item list-unstyled"><a href="" class="nav-link text-white">COFFEE</a></li><hr>
+                <li class="nav-item list-unstyled"><a href="" class="nav-link  text-white">SUBSCRIBE & SAVE</a></li><hr>
+                <li class="nav-item list-unstyled"><a href="" class="nav-link  text-white">MERCH</a></li><hr>
+                <li class="nav-item list-unstyled"><a href="" class="nav-link  text-white">FIND IN STORE</a></li><hr>
+                <li class="nav-item list-unstyled"><a href="" class="nav-link  text-white">BLOG</a></li><hr>
+                <li class="nav-item list-unstyled"><a href="" class="nav-link  text-white">ABOUT</a></li><hr>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="list-unstyled "><a href="#"><i class="ri-user-fill"></i></a></li>
+                <li class="list-unstyled "><a href="#"><i class="ri-search-fill"></i></a></li>
+                <li class="list-unstyled "><a href="#"><i class="ri-shopping-cart-2-fill"></i></a></li>
+            </ul>
+
+        </div>
+    </div>
+
+    <div id="signup-form">
+        <form class="text-center">
+            <h1 class="mb-4">Create Account</h1>
+            <div>
+                <input type="text" placeholder="First Name" id="first-name" required>
+            </div>
+            <div>
+                <input type="text" placeholder="Last Name" id="last-name" required>
+            </div>
+            <div class="email-input">
+                <input type="email" placeholder="Email" id="email">
+                <p id="EmailError" class="error text-start"></p>
+            </div>
+            <div class="password-input">
+                <input type="password" placeholder="Password" id="password">
+                <p id="PasswordError" class="error text-start"></p>
+            </div>
+            <button>Create</button>
+        </form>
+    </div>
+
+
+    
+    <div class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 text">
+                    <p> LET'S DRINK COFFEE AND THROW THINGS AT HAPPY PEOPLE </p>
+                    <input type="email" placeholder="Enter Your Email Address" required><a href="">SIGN ME UP</a>
+                </div>
+            </div>
+        </div>
+     </div>
+
+     <footer class="text-white pt-5 pb-4">  
+        <div class="container text-center text-md-left">
+            <div class="row text-center text-md-left">
+                <div class="col-md-3 col-lg-3 mx-auto mt-3">
+                        <img src="images/dwc-logo.png" alt="">
+                </div>
+                <div class="col-md-2 col-lg-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold">company</h5>
+                    <p><a href="">Help+FAQ</a></p>
+                    <p><a href="">Refund Policy</a></p>
+                    <p><a href="">Careers</a></p>
+                    <p><a href="">Wholesale</a></p>
+                </div>
+                <div class="col-md-4 col-lg-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold">ACCOUNTS + ORDERS </h5>
+                    <p><a href="">Your Account</a></p>
+                    <p><a href="">Shipping + Delivery</a></p>
+                    <p><a href="">Subscription</a></p>
+                    <p><a href="">Track Your Order</a></p>
+                </div>
+                <div class="col-md-3 col-lg-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold">LEGAL</h5>
+                    <p><a href="">Tearms+condition</a></p>
+                    <p><a href="">Privacy Policy</a></p>
+                    <p><a href="">PROP 65</a></p>
+            </div>
+        </div>
+      
+    
+ </footer>
+
+    
+    
+    <script src="sign up.js"></script>
+</body>
+</html>

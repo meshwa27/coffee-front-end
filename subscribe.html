@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="https://code.jquery.com/jquery-3.7.1.js"
+            integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css"
+            integrity="sha512-OQDNdI5rpnZ0BRhhJc+btbbtnxaj+LdQFeh0V9/igiEPDiWE2fG+ZsXl0JEH+bjXKPJ3zcXqNyP4/F/NegVdZg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <link rel="stylesheet" href="subscribe.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"
+            integrity="sha512-Ysw1DcK1P+uYLqprEAzNQJP+J4hTx4t/3X2nbVwszao8wD+9afLjBQYjz7Uk4ADP+Er++mJoScI42ueGtQOzEA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </head>
+    
+<body style="background-color: black;">
+
+    <div class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid d-flex  align-item-center">
+            <button class="btn btn-toggler d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#slidebar"><span><i
+                        class="bi bi-list d-lg-none text-white"></i></span></button>
+
+            <ul class="navbar-nav d-xs-none  d-flex d-sm-none d-md-none d-lg-flex">
+                <li class="nav-item"><a href="product.html" class="nav-link" style="margin-left: 0px;">COFFEE</a></li>
+                <li class="nav-item"><a href="" class="nav-link" style="margin-left:75px;">SUBSCRIBE & SAVE</a></li>
+                <li class="nav-item"><a href="product.html" class="nav-link" style="margin-left: 90px;">MERCH</a></li>
+                <li class="nav-item"><a href="" class="nav-link" style="margin-left: 200px;">FIND IN STORE</a></li>
+                <li class="nav-item"><a href="" class="nav-link" style="margin-left: 100px;">BLOG</a></li>
+                <li class="nav-item"><a href="" class="nav-link" style="margin-left: 100px;">ABOUT</a></li>
+            </ul>
+            <div class="logo">
+                <a href="#"><img src="images/dwc-logo.png" alt=""></a>
+            </div>
+            <ul class="navbar-nav d-xs-none  d-flex d-sm-none d-md-none d-lg-flex">
+                <li class="list-unstyled p-1 ms-2"><a href="sing in.html"><i class="bi bi-person-fill"></i></a></li>
+                <li class="list-unstyled p-1 ms-2"><a href="#" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"><i class="bi bi-search">
+                            <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop"
+                                aria-labelledby="offcanvasTopLabel">
+                                <div class="offcanvas-header" style="background-color: red;height: 30px;">
+                                    <p style=" text-align:center;">ENTER FOR A CHANCE TO WIN AN UPGRAD FOR YOUR COFFEE STATION -></p> 
+                                </div>
+                                <div class="offcanvas-body" style="background-color: black;">
+                                    <input type="text" placeholder="search" style="background-color: #ffffff; width: 40%; height: 60px" >
+                                    <i class="ri-search-fill" style="color: white;"></i> </div>
+                            </div>
+                        </i></a></li>
+                <li class="list-unstyled p-1 ms-2"><a href="#" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="bi bi-cart3">
+
+
+                            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                                aria-labelledby="offcanvasRightLabel">
+                                <div class="offcanvas-header">
+                                    <h5 id="offcanvasRightLabel">Offcanvas right</h5>
+                                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="offcanvas-body">
+                                    ...
+                                </div>
+                            </div>
+                        </i></a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="slidebar" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h5 id="offcanvasRightLabel" class="ms-5">Menu</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body" style="background-color: black;">
+            <ul>
+                <li class="nav-item list-unstyled"><a href="" class="nav-link text-white">COFFEE</a></li><hr>
+                <li class="nav-item list-unstyled"><a href="" class="nav-link  text-white">SUBSCRIBE & SAVE</a></li><hr>
+                <li class="nav-item list-unstyled"><a href="" class="nav-link  text-white">MERCH</a></li><hr>
+                <li class="nav-item list-unstyled"><a href="" class="nav-link  text-white">FIND IN STORE</a></li><hr>
+                <li class="nav-item list-unstyled"><a href="" class="nav-link  text-white">BLOG</a></li><hr>
+                <li class="nav-item list-unstyled"><a href="" class="nav-link  text-white">ABOUT</a></li><hr>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="list-unstyled "><a href="#"><i class="ri-user-fill"></i></a></li>
+                <li class="list-unstyled "><a href="#"><i class="ri-search-fill"></i></a></li>
+                <li class="list-unstyled "><a href="#"><i class="ri-shopping-cart-2-fill"></i></a></li>
+            </ul>
+
+        </div>
+    </div>
+
+
+    <div class="banner">
+        <div class="bannner-img">
+            <img src="images/1.webp" alt="">
+        </div>
+        <div class="banner-text mt-5">
+            <h1>WELCOME TO <br> THE SOCIETY OF <br>STRONG COFFEE</h1>
+            <p>Take the quiz below to start your coffee subscription and instantly reap <br>society-only benefits including 20% off your first shipment, access to <br> exclusive merch and more.            </p>
+            <a href="https://deathwishcoffee.com/shop/almond-afterlife" style="padding: 10px 20px;">SHOP
+                ALMOND AFTERLIFE</a>
+            <a href="https://deathwishcoffee.com/shop/all-coffee" style="padding: 10px 20px;">SHOP ALL
+                COFFEE</a>
+        </div>
+    </div>
+
+    <div class="container" style="background-color: black;">
+        <div class="row">
+            <div class="socity">
+                <h2>SOCIETY BENEFITS</h2>
+            </div>
+        </div>
+        <div class="row group" >
+            <div class="col-3 col-sm-6 col-lg-3">
+                <div class="benifit-img">
+                    <img src="images/Death_Wish_-_About_-_Icon_1_7f65fc1e-8b80-406b-aa3b-2dbbecc5a3dc.png" alt="">
+                </div>
+                <div class="benifit-content">
+                    <h2>BUY MORE, SAVE MORE</h2>
+                    <p>You’ve entered the elite realm of caffeinators. Save up to 25% off subscription-eligible coffee products. The more you subscribe to, the more you save.</p>
+                </div>
+            </div>
+            <div class="col-3 col-sm-6 col-lg-3">
+                <div class="benifit-img">
+                    <img src="images/Group_187.png" alt="">
+                </div>
+                <div class="benifit-content">
+                    <h2>BUY MORE, SAVE MORE</h2>
+                    <p>You’ve entered the elite realm of caffeinators. Save up to 25% off subscription-eligible coffee products. The more you subscribe to, the more you save.</p>
+                </div>
+            </div>
+            <div class="col-3 col-sm-6 col-lg-3">
+                <div class="benifit-img">
+                    <img src="images/Group_268.png" alt="">
+                </div>
+                <div class="benifit-content">
+                    <h2>BUY MORE, SAVE MORE</h2>
+                    <p>You’ve entered the elite realm of caffeinators. Save up to 25% off subscription-eligible coffee products. The more you subscribe to, the more you save.</p>
+                </div>
+            </div>
+            <div class="col-3 col-sm-6 col-lg-3">
+                <div class="benifit-img">
+                    <img src="images/Group_189.png" alt="">
+                </div>
+                <div class="benifit-content">
+                    <h2>BUY MORE, SAVE MORE</h2>
+                    <p>You’ve entered the elite realm of caffeinators. Save up to 25% off subscription-eligible coffee products. The more you subscribe to, the more you save.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="cotainer-fluid">
+        <div class="blank">
+            <h1>SAVE 20% ON YOUR FIRST <br>ORDER + DON'T MISS OUT</h1>
+            <p>Start your subscription today to save 20% on your first shipment and unlock access to other <br> society-only benefits including exclusive access to new product releases.</p>
+            <div class="blank-btn">
+                <a href="https://deathwishcoffee.com/shop/almond-afterlife" style="padding: 10px 20px;">SHOP
+                    ALMOND AFTERLIFE</a>
+                <a href="https://deathwishcoffee.com/shop/all-coffee" style="padding: 10px 20px;">SHOP ALL
+                    COFFEE</a>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="exclusive">
+                <h2>SOCIETY EXCLUSIVES</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="img">
+                            <img src="images/DeathWishCoffee_SocietyOfStrong_Mug_Front_057_Web-_1.jpg" alt="">
+                        </div>
+                        <div class="img-content">
+                            <h6 style="text-align: left;"><a href="">DAILY GRIND LONG SLEEVE</a></h6>
+                            <p>$45.00</p>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <span style="color: #ffffff;">0.0(0)</span><br>
+                            <a href="" class="btn">ADD TO CART<i class="ri-shopping-cart-2-fill"></i></a>
+                        </div>
+    
+                    </div>
+    
+                    <div class="swiper-slide">
+                        <div class="img">
+                           <img src="images/DeathWishCoffee_SocietyOfStrong_Jacket_Front_045_Web_712b1fec-946f-428c-b35c-475e7c627c18.jpg" alt="">
+                        </div>
+                        <div class="img-content" style="text-align: left ;">
+                            <h><a href="">SACRED BLOOM TOWEL AND <br>OVEN MITT</a></h6>
+                                <p>$28.00</p>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <span style="color: #ffffff;">0.0(0)</span><br>
+                                <a href="" class="btn">ADD TO CART<i class="ri-shopping-cart-2-fill"></i></a>
+    
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="img">
+                            <img src="images/Tree-of-life-mug-Death-Wish-Coffee.jpg" alt="">
+                        </div>
+                        <div class="img-content" style="text-align: left;">
+                            <h6><a href="">CREAMATORS RAGLAN</a></h6>
+                            <p>$35.00</p>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <span style="color: #ffffff;">0.0(0)</span><br>
+                            <a href="" class="btn">ADD TO CART<i class="ri-shopping-cart-2-fill"></i></a>
+    
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="img">
+                            <img src="images/DWC_April_Skateboard_black_Bottom_Web.jpg" />
+                        </div>
+                        <div class="img-content" style="text-align: left;">
+                            <h6><a href="">DAILY GRINDBLACK <br> SKATEBOARD DECK</a></h6>
+                            <p>$70.00</p>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <span style="color: #ffffff;">0.0(0)</span><br>
+                            <a href="" class="btn">ADD TO CART<i class="ri-shopping-cart-2-fill"></i></a>
+    
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="img">
+                            <img src="images/Tree-of-life-mug-Death-Wish-Coffee.jpg" />
+                        </div>
+                        <div class="img-content" style="text-align: left;">
+                            <h6><a href="">Tree of life mug</a></h6>
+                            <p>$38.00</p>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <span style="color: #ffffff;">0.0(0)</span><br>
+                            <a href="" class="btn">ADD TO CART<i class="ri-shopping-cart-2-fill"></i></a>
+    
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="img">
+                            <img src="images/DWC_April_Skateboard_black_Bottom_Web.jpg" />
+                        </div>
+                        <div class="img-content" style="text-align: left;">
+                            <h6><a href="">DAILY GRINDBLACK <br> SKATEBOARD DECK</a></h6>
+                            <p>$70.00</p>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <span style="color: #ffffff;">0.0(0)</span><br>
+                            <a href="" class="btn">ADD TO CART<i class="ri-shopping-cart-2-fill"></i></a>
+    
+                        </div>
+                    </div>
+                   
+    
+                </div>
+    
+    
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="member">
+            <h2>SOCIETY MEMBER-ONLY REWARDS</h2>
+            <p>All can climb the ranks of rewards, but only Society of Strong Coffee Members receive these special perks. Subscribe and gain access to even more inner-sanctum sweetness.            </p>
+        </div>
+
+        <table class="table table-dark table-striped mt-5">
+            <thead>
+              <tr >
+                <th></th>
+                <th>SOCIETY MEMBERS</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Subscriber feedback forum participation</td>
+                <td><img src="images/—Pngtree—correct icon design template vector_6219090.png" style="height: 50px; width:70px;" alt=""></td>
+              </tr>
+              <tr>
+                <td>Double points days</td>
+                <td><img src="images/—Pngtree—correct icon design template vector_6219090.png" style="height: 50px; width:70px;" alt=""></td>
+              </tr>
+              <tr>
+                <td>Early access to exclusive releases</td>
+                <td><img src="images/—Pngtree—correct icon design template vector_6219090.png" style="height: 50px; width:70px;" alt=""></td>
+              </tr>
+              <tr>
+                <td>Private merch drops</td>
+                <td><img src="images/—Pngtree—correct icon design template vector_6219090.png" style="height: 50px; width:70px;" alt=""></td>
+              </tr>
+              <tr>
+                <td>Up to 25% off recurring coffee orders</td>
+                <td><img src="images/—Pngtree—correct icon design template vector_6219090.png" style="height: 50px; width:70px;" alt=""></td>
+              </tr>
+              <tr>
+                <td>Sampling program access</td>
+                <td><img src="images/—Pngtree—correct icon design template vector_6219090.png" style="height: 50px; width:70px;" alt=""></td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+
+
+    <div class="container-fluid">
+        <div class="banner2 mt-5">
+            <img src="images/Vanilla-Bagged-Find-My-Brew.jpg" alt="">
+        </div>
+        <div class="banner2-content">
+            <h1>NEED HELP <br>CHOOSING A <br> ROAST?</h1>
+            <p>Don't sweat it — we've got you covered. Take the quiz below to find out <br> which Death Wish Coffee roast is best for you.</p>
+            <a href="https://deathwishcoffee.com/shop/almond-afterlife" style="padding: 10px 20px;">SHOP
+                ALMOND AFTERLIFE</a>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 text">
+                    <p> LET'S DRINK COFFEE AND THROW THINGS AT HAPPY PEOPLE </p>
+                    <input type="email" placeholder="Enter Your Email Address" required><button><a
+                            href="">SIGN ME UP</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="text-white pt-5 pb-4">
+        <div class="container text-center text-md-left">
+            <div class="row text-center text-md-left">
+                <div class=" grid col-md-3 col-lg-3 mx-auto mt-3">
+                    <img src="images/dwc-logo.png" alt="">
+                </div>
+                <div class="col-md-2 col-lg-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold">company</h5>
+                    <p><a href="">Help+FAQ</a></p>
+                    <p><a href="">Refund Policy</a></p>
+                    <p><a href="">Careers</a></p>
+                    <p><a href="">Wholesale</a></p>
+                </div>
+                <div class="col-md-4 col-lg-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold">ACCOUNTS + ORDERS </h5>
+                    <p><a href="">Your Account</a></p>
+                    <p><a href="">Shipping + Delivery</a></p>
+                    <p><a href="">Subscription</a></p>
+                    <p><a href="">Track Your Order</a></p>
+                </div>
+                <div class="col-md-3 col-lg-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold">LEGAL</h5>
+                    <p><a href="">Tearms+condition</a></p>
+                    <p><a href="">Privacy Policy</a></p>
+                    <p><a href="">PROP 65</a></p>
+                </div>
+                <div class="icon-box">
+                    <p>GET WIRED WITH US</p>
+                    <ul class="d-flex justify-content-center foot-icons" >
+                        <li class="list-unstyled ms-2" style="padding: 10px 15px;background-color: red;border-radius: 50%;"><a href=""><i class="ri-facebook-fill"></i></a></li>
+                        <li class="list-unstyled ms-2" style="padding: 10px 15px;background-color: red;border-radius: 50%;"><a href=""><i class="ri-instagram-line"></i></a></li>
+                        <li class="list-unstyled ms-2" style="padding: 10px 15px;background-color: red;border-radius: 50%;"><a href=""><i class="ri-youtube-fill"></i></a></li>
+                        <li class="list-unstyled ms-2" style="padding: 10px 15px;background-color: red;border-radius: 50%;"><a href=""><i class="ri-twitter-fill"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+    </footer>
+    <script src="subscribe.js"></script>
+</body>
+</html>
